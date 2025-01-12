@@ -2,13 +2,14 @@ package interactive
 
 import (
 	"fmt"
-	"github.com/byawitz/ggh/internal/config"
-	"github.com/byawitz/ggh/internal/history"
-	"github.com/byawitz/ggh/internal/theme"
 	"math"
 	"os"
 	"slices"
 	"strings"
+
+	"github.com/byawitz/ggh/internal/config"
+	"github.com/byawitz/ggh/internal/history"
+	"github.com/byawitz/ggh/internal/theme"
 
 	"github.com/charmbracelet/bubbles/table"
 	tea "github.com/charmbracelet/bubbletea"
@@ -76,8 +77,8 @@ func Select(rows []table.Row, what Selecting) config.SSHConfig {
 	var columns []table.Column
 	if what == SelectConfig {
 		columns = append(columns, []table.Column{
-			{Title: "Name", Width: 15},
-			{Title: "Host", Width: 15},
+			{Title: "Name", Width: 30},
+			{Title: "Host", Width: 20},
 			{Title: "Port", Width: 10},
 			{Title: "User", Width: 10},
 			{Title: "Key", Width: 10},
@@ -86,8 +87,8 @@ func Select(rows []table.Row, what Selecting) config.SSHConfig {
 
 	if what == SelectHistory {
 		columns = append(columns, []table.Column{
-			{Title: "Name", Width: 10},
-			{Title: "Host", Width: 15},
+			{Title: "Name", Width: 30},
+			{Title: "Host", Width: 20},
 			{Title: "Port", Width: 4},
 			{Title: "User", Width: 10},
 			{Title: "Key", Width: 10},
